@@ -24,9 +24,7 @@ app.use(require("express-session")({
     saveUninitialized: false
 }));
 
-
 app.use('/', route);
-
 
 mongoose.connect(dsn, {
   "useNewUrlParser": true, 

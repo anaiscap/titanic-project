@@ -33,12 +33,12 @@ const login = (req, res, next) => {
     UserModel.findOne({
         "username": username,
         "password": password
-    }, function(err, user) {
+    }, function(err, User) {
         if (err) {
             console.log(err);
             return res.status(500).send();
         }
-        if (!user) {
+        if (!User) {
             return res.redirect('/login');
         }
         return res.redirect('/secret');
