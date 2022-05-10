@@ -1,0 +1,16 @@
+.passengerlist {
+    display: flex;
+    flex-wrap: wrap;
+}
+.passenger {
+background-color: antiquewhite;
+list-style: none;
+width: fit-content;
+padding: 5px 10px 5px;
+margin: 5px;
+border-radius: 1em;
+}
+
+.dead {
+    color: red;
+}
