@@ -1,4 +1,4 @@
-import UserModel from '../Models/User';
+import Myuser from '../Models/User';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
@@ -6,13 +6,13 @@ const register = (req, res, next) => {
     
     const {username, password} = req.body
 
-    const User = new UserModel (
+    const user = new Myuser (
         {
             "username": username,
             "password": password
         }
     )
-    User.save()
+    user.save()
     .then((doc) => {
         console.log(doc);
         return res.redirect('/secret');
@@ -30,7 +30,7 @@ const login = (req, res, next) => {
     let username = req.body.username;
     let password = req.body.password;
 
-    UserModel.findOne({
+    Myuser.findOne({
         "username": username,
         "password": password
     }, function(err, User) {
@@ -41,7 +41,11 @@ const login = (req, res, next) => {
         if (!User) {
             return res.redirect('/login');
         }
+
+        console.log(username);
+        
         return res.redirect('/secret');
+        
     })
 }
 
