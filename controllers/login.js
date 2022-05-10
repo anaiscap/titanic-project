@@ -1,4 +1,4 @@
 export default (req, res) => {
-    res.render('home/login');
+    res.render('home/login', )
   };
   
