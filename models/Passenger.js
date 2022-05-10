@@ -6,7 +6,7 @@ const DataSchema = new mongoose.Schema(
   "Sex": String,
   "Age": Number,
   "Survived": Number,
-  "Pclass": Number
+  "Pclass": String
 }
 );
 

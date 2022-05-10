@@ -11,7 +11,6 @@ router.get("/", HomeController );
 
 router.get("/secret/:sex?", SecretController );
 
-
 router.get("/login", LoginController );
 router.post('/login', AuthController.login);
 
