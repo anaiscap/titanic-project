@@ -14,3 +14,11 @@ border-radius: 1em;
 .dead {
     color: red;
 }
+
+.button {
+    background-color: blueviolet;
+    padding: 10px;
+    border-radius: 1em ;
+    color: white;
+    text-decoration: none;
+}
