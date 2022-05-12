@@ -4,11 +4,12 @@ import express from "express";
 import route from "./routes/routes";
 import dotenv from 'dotenv';
 import bodyParser from "body-parser";
+import session from 'express-session';
 //import User from './Models/User';
 import mongoose from 'mongoose';
 
 dotenv.config();
-const { APP_LOCALHOST : hostname, APP_PORT: port, APP_DSN: dsn } = process.env;
+const { APP_LOCALHOST : hostname, APP_PORT: port, APP_SECRET: secret, APP_DSN: dsn } = process.env;
 
 const app = express();
 
@@ -18,11 +19,15 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(require("express-session")({
-    secret: "Rusty is a dog",
-    resave: false,
-    saveUninitialized: false
-}));
+app.use(session(
+  {
+      name: 'nomDuCookie',
+      secret: secret,
+      resave: true,
+      saveUninitialized: true,
+      cookie: {maxAge: 86400000}
+  }
+))
 
 
 app.use('/', route);

@@ -1,0 +1,28 @@
+
+<%- include('../partials/userHeader') -%>
+<div>
+    <h1>Titanic Data stats </h1>
+    
+    <div class="list">
+        <% passengers.forEach((passenger,index) => {%>
+            <ul>
+                <li><%= passenger._id.sex %></li>
+                <li>Class <%= passenger._id.pclass %></li>
+                <li>
+                    <% if (passenger._id.survived === 1){ %>
+                        Alive
+                    <% }  %>
+                    <% if (passenger._id.survived === 0){ %>
+                        Dead
+                    <% }  %>
+                </li>
+                <li>Total <%=passenger.total %></li>
+            </ul>
+        <% });%> 
+    </div>
+
+    <%- include('../partials/graph') -%>
+
+
+</div>
+<%- include('../partials/footer') -%>

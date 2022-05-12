@@ -1,3 +1,5 @@
 export default (req, res) => {
-  res.render('home/index', { posts : [] });
+  console.log(req.session)
+  const val = req.session.login;
+  res.render('home/index', {user:val});
 };

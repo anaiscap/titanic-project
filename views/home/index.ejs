@@ -1,11 +1,34 @@
 
 <%- include('../partials/header') -%>
     <div>
-       <h1>Titanic Data Project</h1>
 
-       <h2>Click on the button to login</h2>
+      <h1>Titanic Data Project</h1>
 
-       <a href="/login" class="button">LOG IN</a>
+      <% if (user) { %>
+
+        <p>
+           Welcome <%= user %> !
+        </p> 
+        <a href="/secret" class="active item">Secret</a>
+      
+      
+      <%}%>
+
+      
+     
+      <% if (!user) { %>
+
+         <h2>Click on the button to login</h2>
+
+         <a href="/login" class="button">LOG IN</a>
+      
+      
+      <%}%>
+      
+      
+       
+
+       
 
 
     </div>
