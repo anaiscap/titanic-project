@@ -1,12 +1,18 @@
 
 <%- include('../partials/userHeader') -%>
 <div>
-    <h1>Titanic Data stats </h1>
+    <div class="flex">
+        
+        <h1>Titanic Data stats </h1>
+        <a class="button bottom1" href="/secret" class="active item">RETURN</a>
+
+    </div>
     
-    <div class="list">
+    
+    <div class="list bottom1">
         <% passengers.forEach((passenger,index) => {%>
             <ul>
-                <li><%= passenger._id.sex %></li>
+                <li class="titletr"><%= passenger._id.sex %></li>
                 <li>Class <%= passenger._id.pclass %></li>
                 <li>
                     <% if (passenger._id.survived === 1){ %>
