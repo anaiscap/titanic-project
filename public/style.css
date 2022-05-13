@@ -16,6 +16,9 @@ body {
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
+.icon {
+    width: 60px;
+}
 .navMenu {
     text-align: center;
     background-color: var(--main-bg-color);
@@ -28,6 +31,10 @@ body {
 }
 .menu{
     align-self: center;  
+}
+
+.center{
+    text-align: center;
 }
 
 .navMenu a {

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/semantic/semantic.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -13,7 +14,8 @@
 </head>
 <body>
         <nav class="navMenu">
-            <p> Hello <%= user %></p>
+            <img class="icon" src="../img/titanic.png"/>
+            <p><%= user %></p>
             <div class="menu">
                 <a href="/" class="active item">Home</a>
                 <% if (user) { %>
