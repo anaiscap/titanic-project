@@ -2,6 +2,7 @@ import express from "express";
 const router = express.Router();
 
 import HomeController from "../controllers/home";
+import ErrorController from "../controllers/404";
 import RegisterController from "../controllers/register";
 import SecretController from "../controllers/secret";
 import LoginController from "../controllers/login";
@@ -10,6 +11,7 @@ import AllController from "../controllers/all";
 import StatsController from "../controllers/stats";
 
 router.get("/", HomeController );
+
 
 router.get("/login", LoginController );
 router.post('/login', AuthController.login);
@@ -22,4 +24,5 @@ router.get("/secret/:term?", SecretController );
 router.get("/all", AllController );
 router.get("/stats", StatsController.Count);
 
+router.get("*", ErrorController );
 export default router;
