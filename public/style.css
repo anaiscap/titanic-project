@@ -194,7 +194,9 @@ border-radius: 1em;
 .flex h1 {
     margin-right: 2em;
 }
-
+.flex p {
+    margin-right: 1em;
+}
 .signup {
     display: flex;
     flex-direction: column;

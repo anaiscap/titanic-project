@@ -1,0 +1,38 @@
+
+<%- include('../partials/userHeader') -%>
+   <div class="container">
+
+      <a href="/" class="button">RETURN</a> 
+
+         <div class="bottom1">
+               <h3 class="bottom1">
+                  Percentage of survivors by gender and class:
+               </h3> 
+               <div class="flex">
+                  <% datas.forEach((data,index) => {%>
+                     <% if (data._id.sex === 'female'){%>
+                        <div>
+                           <p class="titletr"><%= data._id.sex %> </p>
+                           <p> class <%= data._id.pclass %></p>
+                           <p><%= data.roundedAvg %></p>
+                        </div>
+                     <%}%>
+                     
+                  <% });%>
+         </div>
+         <div class="flex">
+            <% datas.forEach((data,index) => {%>
+              
+               <% if (data._id.sex === 'male'){%>
+                  <div>
+                     <p class="titletr"><%= data._id.sex %> </p>
+                     <p> class <%= data._id.pclass %></p>
+                     <p><%= data.roundedAvg %></p>
+                  </div>
+               <%}%>
+               
+            <% });%>
+   </div>
+
+   </div>
+<%- include('../partials/footer') -%>

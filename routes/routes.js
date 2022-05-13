@@ -23,6 +23,8 @@ router.post("/register", AuthController.register);
 router.get("/secret/:term?", SecretController );
 router.get("/all", AllController );
 router.get("/stats", StatsController.Count);
+router.get("/secret/search", StatsController.Search);
+router.get("/stats/avg", StatsController.Avg);
 
 router.get("*", ErrorController );
 export default router;
