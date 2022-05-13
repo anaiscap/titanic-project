@@ -8,8 +8,6 @@
 
     </div>
 
-    <a class="button bottom1" href="/stats/avg" class="active item">Other stats</a>
-
     <div class="list bottom1">
         <% passengers.forEach((passenger,index) => {%>
             <ul>
@@ -27,9 +25,12 @@
             </ul>
         <% });%> 
     </div>
+    <div class="bottom1">
+        <%- include('../partials/graph') -%>
+    </div>
+    
 
-    <%- include('../partials/graph') -%>
-
+    <a class="button center bottom1" href="/stats/avg" class="active item">Other stats</a>
 
 </div>
 <%- include('../partials/footer') -%>

@@ -1,9 +1,6 @@
 
 <%- include('../partials/userHeader') -%>
    <div class="container">
-
-      <a href="/" class="button">RETURN</a> 
-
          <div class="bottom1">
                <h3 class="bottom1">
                   Percentage of survivors by gender and class:
@@ -20,7 +17,7 @@
                      
                   <% });%>
          </div>
-         <div class="flex">
+         <div class="flex bottom1">
             <% datas.forEach((data,index) => {%>
               
                <% if (data._id.sex === 'male'){%>
@@ -32,7 +29,7 @@
                <%}%>
                
             <% });%>
-   </div>
-
+         </div>
+   <a href="/stats" class="button">RETURN</a>
    </div>
 <%- include('../partials/footer') -%>

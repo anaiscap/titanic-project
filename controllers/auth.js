@@ -55,10 +55,6 @@ try {
   // Get user input
   const { username, password } = req.body;
 
-  // Validate user input
-  /*if (!(username && password)) {
-    res.status(400).send("All input is required");
-  }*/
   // Validate if user exist in our database
   const user = await Myuser.findOne({ username });
 
