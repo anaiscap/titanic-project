@@ -2,7 +2,9 @@ import Passenger from '../Models/Passenger';
 
 export default (req, res) => {
   const val = req.session.login;
- 
+if (!val) {
+  res.render('home/login'); 
+} else {
   if (req.params.term) {
     const { k } = req.query;
     let term = req.params.term;
@@ -11,7 +13,7 @@ export default (req, res) => {
     
     Passenger.find({ [k]: term }).exec((err ,doc) => {
       //console.log(doc);
-      res.render('home/secret',{passengers: doc});
+      res.render('home/secret',{passengers: doc, user: val});
       console.log("hi",val)
     });
     
@@ -19,6 +21,6 @@ export default (req, res) => {
     return;
   }
   console.log("hello", val)
-  res.render('home/secret',{passengers: null}); 
-
+  res.render('home/secret',{passengers: null, user: val}); 
+}
 } 

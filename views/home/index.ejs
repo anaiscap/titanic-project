@@ -1,35 +1,32 @@
 
-<%- include('../partials/header') -%>
-    <div>
+<%- include('../partials/userHeader') -%>
+    <div class="container">
 
       <h1>Titanic Data Project</h1>
 
       <% if (user) { %>
-
-        <p>
-           Welcome <%= user %> !
-        </p> 
-        <a href="/secret" class="active item">Secret</a>
-      
-      
+         <div class="bottom1">
+            <h3 class="bottom1">
+               Welcome <%= user %> !
+            </h3> 
+            <p >
+               <a class="button" href="/secret" class="active item">TITANIC DATA</a>
+            </p>
+            
+         </div>
       <%}%>
 
       
      
       <% if (!user) { %>
-
-         <h2>Click on the button to login</h2>
-
-         <a href="/login" class="button">LOG IN</a>
+         <div class="bottom1">
+            <h3>Click on the button to login !</h3>
+            <a href="/login" class="button">LOG IN</a>
+         </div>
+        
       
       
       <%}%>
-      
-      
-       
-
-       
-
 
     </div>
     <%- include('../partials/footer') -%>

@@ -12,12 +12,13 @@
     <title>Posts</title>
 </head>
 <body>
-    <div class="ui inverted menu">
-        <p>Hello </p>
-        <a href="/" class="active item">Home</a>
-
-        
-        <a href="/secret" class="active item">Data</a>
-        <a href="/logout" class="active item">Log Out</a>
-   
-    </div>
+        <nav class="navMenu">
+            <p> Hello <%= user %></p>
+            <div class="menu">
+                <a href="/" class="active item">Home</a>
+                <% if (user) { %>
+                    <a href="/secret" class="active item">Data</a>
+                    <a href="/logout" class="active item">Log Out</a>
+                <%}%>
+            </div>
+        </nav>

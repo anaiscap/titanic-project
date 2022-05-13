@@ -3,7 +3,10 @@ import Passenger from '../Models/Passenger';
 
 
 const Count = (req, res) => {
-    
+  const val = req.session.login;
+  if (!val) {
+    res.render('home/login'); 
+  } else {
   Passenger.aggregate(
     [
       { $group : 
@@ -17,10 +20,11 @@ const Count = (req, res) => {
         }
       },
     ]).exec((err ,doc) => {
-    res.render('data/stats',{passengers: doc});
+    res.render('data/stats',{passengers: doc, user: val});
   });
   
   return;
+}
 }
 
 module.exports = {
